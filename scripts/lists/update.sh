@@ -10,10 +10,10 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "list": {
-      "item": "'"${TEXT}"'",
-      "description": "'"${TEXT}"'",
+      "item": "'"${ITEM}"'",
+      "description": "'"${DESCRIPTION}"'",
       "date": "'"${DATE}"'",
-      "location": "'"${TEXT}"'"
+      "location": "'"${LOCATION}"'"
     }
   }'
 
