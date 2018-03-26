@@ -2,16 +2,16 @@
 
 const controller = require('lib/wiring/controller')
 const models = require('app/models')
-const List = models.list
+const Todo = models.todo
 
 const authenticate = require('./concerns/authenticate')
 const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
 const index = (req, res, next) => {
-  List.find()
-    .then(lists => res.json({
-      lists: lists.map((e) =>
+  Todo.find()
+    .then(todos => res.json({
+      todos: todos.map((e) =>
         e.toJSON({ virtuals: true, user: req.user }))
     }))
     .catch(next)
@@ -19,33 +19,33 @@ const index = (req, res, next) => {
 
 const show = (req, res) => {
   res.json({
-    list: req.list.toJSON({ virtuals: true, user: req.user })
+    todo: req.todo.toJSON({ virtuals: true, user: req.user })
   })
 }
 
 const create = (req, res, next) => {
-  const list = Object.assign(req.body.list, {
+  const todo = Object.assign(req.body.todo, {
     _owner: req.user._id
   })
-  List.create(list)
-    .then(list =>
+  Todo.create(todo)
+    .then(todo =>
       res.status(201)
         .json({
-          list: list.toJSON({ virtuals: true, user: req.user })
+          todo: todo.toJSON({ virtuals: true, user: req.user })
         }))
     .catch(next)
 }
 
 const update = (req, res, next) => {
-  delete req.body.list._owner  // disallow owner reassignment.
+  delete req.body.todo._owner  // disallow owner reassignment.
 
-  req.list.update(req.body.list)
+  req.todo.update(req.body.todo)
     .then(() => res.sendStatus(204))
     .catch(next)
 }
 
 const destroy = (req, res, next) => {
-  req.list.remove()
+  req.todo.remove()
     .then(() => res.sendStatus(204))
     .catch(next)
 }
@@ -59,6 +59,6 @@ module.exports = controller({
 }, { before: [
   { method: setUser, only: ['index', 'show'] },
   { method: authenticate, except: ['index', 'show'] },
-  { method: setModel(List), only: ['show'] },
-  { method: setModel(List, { forUser: true }), only: ['update', 'destroy'] }
+  { method: setModel(Todo), only: ['show'] },
+  { method: setModel(Todo, { forUser: true }), only: ['update', 'destroy'] }
 ] })

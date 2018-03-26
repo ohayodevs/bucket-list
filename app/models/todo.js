@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-const listSchema = new mongoose.Schema({
+const todoSchema = new mongoose.Schema({
   item: {
     type: String,
     required: true
@@ -41,10 +41,10 @@ const listSchema = new mongoose.Schema({
   }
 })
 
-// listSchema.virtual('length').get(function length () {
+// todoSchema.virtual('length').get(function length () {
 //   return this.text.length
 // })
 
-const List = mongoose.model('List', listSchema)
+const Todo = mongoose.model('Todo', todoSchema)
 
-module.exports = List
+module.exports = Todo
