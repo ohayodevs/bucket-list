@@ -17,10 +17,12 @@ const index = (req, res, next) => {
     .catch(next)
 }
 
-const show = (req, res) => {
-  res.json({
-    todo: req.todo.toJSON({ virtuals: true, user: req.user })
-  })
+const show = (req, res, next) => {
+  Todo.findById(req.user._id)
+  .then(todo => res.json({
+    todo: todo.toJSON({ virtuals: true, user: req.user })
+  }))
+  .catch(next)
 }
 
 const create = (req, res, next) => {
