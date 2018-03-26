@@ -10,7 +10,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "todo": {
-      "name": "'"${ITEM}"'",
+      "name": "'"${NAME}"'",
       "description": "'"${DESCRIPTION}"'",
       "date": "'"${DATE}"'",
       "location": "'"${LOCATION}"'"
