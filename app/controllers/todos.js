@@ -18,7 +18,7 @@ const index = (req, res, next) => {
 }
 
 const show = (req, res, next) => {
-  Todo.findById(req.user._id)
+  Todo.findById(req.todo.id)
   .then(todo => res.json({
     todo: todo.toJSON({ virtuals: true, user: req.user })
   }))
