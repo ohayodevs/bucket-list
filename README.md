@@ -33,5 +33,5 @@ All data returned from API actions is formatted as JSON.
 - Add extra features
 
 ## Links
-- Bucketli.st Client repository: https://github.com/lydivetteroldan/ga-wdi-bucketlist
-- Bucketli.st Client website: https://lydivetteroldan.github.io/ga-wdi-bucketlist/
+- Bucketli.st Client repository: https://github.com/ohayodevs/bucket-list-client
+- Bucketli.st Client website: https://ohayodevs.github.io/bucket-list-client/
