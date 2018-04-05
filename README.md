@@ -7,7 +7,6 @@ This is the Git repository for the Bucketli.st API. We used Express, MongoDB and
 [ERD](https://i.imgur.com/20nhnoH.jpg)
 
 ### Technologies Used
-
 - JavaScript
 - Express
 - MongoDB
@@ -29,18 +28,9 @@ This is the Git repository for the Bucketli.st API. We used Express, MongoDB and
 All data returned from API actions is formatted as JSON.
 
 ### Unsolved Issues for Future Iterations
-- Test with client-side
-- Deploy
-- Add extra features
+- Add another relationship completed goals
 
 ## Links
 - Bucketli.st Client repository: https://github.com/ohayodevs/bucket-list-client
+- Bucketli.st API deployed website: https://ohayo-bucketlist.herokuapp.com/
 - Bucketli.st Client website: https://ohayodevs.github.io/bucket-list-client/
-
-### API Routes
-
-### Unsolved Issues for Future Iterations
-
-## Links
-- Bucketli.st Client repository: https://github.com/lydivetteroldan/ga-wdi-bucketlist
-- Bucketli.st Client website: https://lydivetteroldan.github.io/ga-wdi-bucketlist/

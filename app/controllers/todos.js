@@ -9,7 +9,7 @@ const setUser = require('./concerns/set-current-user')
 const setModel = require('./concerns/set-mongoose-model')
 
 const index = (req, res, next) => {
-  Todo.find()
+  Todo.find({_owner: req.user._id})
     .then(todos => res.json({
       todos: todos.map((e) =>
         e.toJSON({ virtuals: true, user: req.user }))
