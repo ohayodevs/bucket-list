@@ -27,6 +27,11 @@ This is the Git repository for the Bucketli.st API. We used Express, MongoDB and
 
 All data returned from API actions is formatted as JSON.
 
+### Planning Process & Problem-solving Strategy
+
+- As an odd numbered team, we had to work together on all features at together.
+- We broke down each problem to smaller issues and tackled them piece by piece.
+
 ### Unsolved Issues for Future Iterations
 - Add another relationship completed goals
 
