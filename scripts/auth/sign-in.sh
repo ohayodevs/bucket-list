@@ -9,7 +9,6 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "username": "'"${USERNAME}"'",
       "email": "'"${EMAIL}"'",
       "password": "'"${PASSWORD}"'"
     }
